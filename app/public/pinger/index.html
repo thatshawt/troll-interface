@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Minecraft Pinger cus yea</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/pinger/main.js"></script>
+  </head>
+  
+  <body>
+    <div class="jumbotron text-center">
+      <h1>Minecraft Server Pinger</h1>
+      <p>when u make the stinky</p>
+    </div>
+    <div>
+      <input name="mcip" type="text" placeholder="Type IP here" id="mcip">
+      <button class="btn" onclick="onClickThing()">
+        SUBMIT MAHCINE
+      </button>
+      
+      <script>
+        function onClickThing(){
+          var postUrl = "/api/pinger/ping?mcip="+$("#mcip").val()
+          console.log(postUrl)
+          $.post(postUrl, function( data ) {
+            console.log(data)
+            //$( "#result" ).text(JSON.stringify(data))
+            $("#desc").text(data.description)
+            $('#descThing').text("Desc: ")
+            $("#icon").attr("src", data.favicon)
+            $("#ping").text("Ping: "+data.ping)
+            $("#playerMax").text("Player Max: "+data.players.max)
+            $("#playerOnline").text("Players Online: "+data.players.online)
+            
+            $("#protocolThing").text("Protocol: ")
+            
+            $("#protocolNameThing").text("Name: ")
+            $("#protocolName").text(data.version.name)
+            
+            $("#protocolVersionThing").text("Version: ")
+            $("#protocolVersion").text(data.version.protocol)
+          });
+        }
+      </script>
+      
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1">
+          <img id="icon"/>
+        </div>
+        <div class="col-1">
+          <h2 id="descThing">
+          </h2>
+        </div>
+        <div class="col-5">
+          <h2 id="desc"></h2>
+        </div>
+      </div>
+      
+      <h2 id="ping"></h2>
+      <h2 id="playerOnline"></h2>
+      <h2 id="playerMax"></h2>
+      <div class="row">
+        <div class="col-1" >
+          <h2 id="protocolThing">
+            
+          </h2>
+        </div>
+        <div class="col-2">
+          <h2 id="protocolNameThing">
+            
+          </h2>
+        </div>
+        <div class="col-1">
+          <h2 id="protocolName"></h2>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-1">
+          
+        </div>
+        <div class="col-2">
+          <h2 id="protocolVersionThing">
+            
+          </h2>
+        </div>
+        
+        <div class="col-1">
+          <h2 id="protocolVersion"></h2>
+        </div>
+      </div>
+
+    </div>
+  </body>
+  
+</html>

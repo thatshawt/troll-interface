@@ -1,0 +1,3 @@
+secrets
+*.bat
+app/node_modules

@@ -1,0 +1,39 @@
+<meta property="og:type" content="website">
+<meta property="twitter:card" content="summary_large_image">
+
+<% if(locals.title){ %> 
+<meta property="title" content="<%= title %>" />
+<meta property="og:title" content="<%= title %>" />
+<meta property="twitter:title" content="<%= title %>" />
+<% } %> 
+
+<% if(locals.url){ %> 
+<meta property="og:url" content="<%= url %>" />
+<meta property="twitter:url" content="<%= url %>" />
+<% } %> 
+
+<% if(locals.desc){ %> 
+<meta property="og:description" content="<%= desc %>" />
+<meta property="twitter:description" content="<%= desc %>" />
+<meta property="description" content="<%= desc %>" />
+<!-- <meta name="theme-color" content="<%= //color %>"> -->
+<% } %> 
+
+<% if(locals.siteName){ %> 
+<meta property="og:site_name" content="<%= siteName %> ">
+<% } %> 
+
+<% if(locals.image){%>
+
+<meta property="og:image" content="<%= image %>" />
+<meta property="twitter:image" content="<%= image %>" />
+<% }if(locals.video){ %>
+  <meta property="og:type" content="video.other" />
+  <meta property="og:video" content="<%= video %>" />
+  <meta property="og:video:secure_url" content="<%= video %>" />
+  <meta property="og:width" content="620" />
+  <meta property="og:height" content="378" />
+  <meta property="og:video:type" content="text/html" />
+<% }else{ %>
+  <meta property="og:type" content="website" />
+<% } %>

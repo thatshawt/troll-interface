@@ -1,0 +1,13 @@
+<head>
+
+  <%- include('partials/embedTags') %>
+  
+</head>
+
+<body>
+
+  <script nonce="<%= locals.nonce %>">
+    window.location.replace("<%= (redirect == "") ? "https://google.com" : redirect %>");
+  </script>
+  
+</body>

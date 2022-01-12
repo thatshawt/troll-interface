@@ -1,0 +1,25 @@
+{
+    "background_color": "purple",
+    "description": "You really thought you did something here didn't you? Y ES you did",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "img/2fc77890-0f5d-415d-bc37-ddf993ff1824_day3.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "img/2fc77890-0f5d-415d-bc37-ddf993ff1824_day3_120.png?v=1602817241372",
+        "sizes": "120x120",
+        "type": "image/png"
+      },
+      {
+        "src": "img/2fc77890-0f5d-415d-bc37-ddf993ff1824_day3_180.png?v=1602817241372",
+        "sizes": "180x180",
+        "type": "image/png"
+      }
+    ],
+    "name": "Awesomes",
+    "short_name": "Poeple",
+    "start_url": "/troll"
+}
