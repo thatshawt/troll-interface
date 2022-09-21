@@ -16,9 +16,10 @@ COPY app/package*.json ./app/
 # RUN npm install
 # COPY package-lock.json .
 # COPY yarn.lock .
+RUN cd /app
 RUN yarn install --production
 RUN yarn global add nodemon
-
+RUN cd ..
 #copy source code over
 COPY app ./app/
 
