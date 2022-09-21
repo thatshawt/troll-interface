@@ -3,7 +3,7 @@ FROM node:12-alpine
 
 #install some stuff we need
 RUN apk update && apk upgrade
-RUN apk add --no-cache python g++ make
+RUN apk add --no-cache python3 g++ make
 
 # we are going to work in /app in the docker image
 WORKDIR /app
