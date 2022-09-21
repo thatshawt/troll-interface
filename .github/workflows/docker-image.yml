@@ -1,18 +1,20 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
+    - name: login to docker
+      run: docker login -u thatshawt -p ${{ secrets.DOCKER_PASSWORD_LOGIN }}
     - name: Build the Docker image
       run: docker build . --file app/Dockerfile --tag my-image-name:$(date +%s)
+    - name: push the image to regsitry
+      run: docker push my-image-name:$(date +%s)
