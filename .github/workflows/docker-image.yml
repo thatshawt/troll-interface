@@ -16,7 +16,7 @@ jobs:
       run: docker login -u thatshawt -p ${{ secrets.DOCKER_PASSWORD_LOGIN }}
     - run: echo "current files stuff:" && ls && echo "and in app dir:" && ls app
     - name: Build the Docker image
-      run: docker build . --file app/Dockerfile --tag thatshawt/davidpineiro.xyz:discordserver
+      run: docker build . --file Dockerfile --tag thatshawt/davidpineiro.xyz:discordserver
     - name: push the image to regsitry
       run: docker push thatshawt/davidpineiro.xyz:discordserver
     - run: echo "Available @ thatshawt/davidpineiro.xyz:discordserver"
