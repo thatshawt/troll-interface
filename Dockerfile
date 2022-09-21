@@ -12,7 +12,7 @@ RUN apk add --no-cache python3 g++ make
 # RUN ls -l
 # idk anymore
 # COPY app app
-COPY app/package*.json .
+COPY app/package*.json ./app/
 # RUN npm install
 # COPY package-lock.json .
 # COPY yarn.lock .
@@ -20,7 +20,7 @@ RUN yarn install --production
 RUN yarn global add nodemon
 
 #copy source code over
-COPY app .
+COPY app ./app/
 
 #run the app
 # CMD echo BRUB RUBRUBRUIBRIURIU
