@@ -25,4 +25,4 @@ COPY app ./app/
 #run the app
 # CMD echo BRUB RUBRUBRUIBRIURIU
 # CMD ls -l
-CMD yarn run start
+CMD cd /app && yarn run start
