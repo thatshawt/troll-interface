@@ -10,7 +10,9 @@ WORKDIR /app
 
 #copy the package.json's and install the dependencies
 # RUN ls -l
-COPY package*.json ./
+# idk anymore
+COPY . . 
+# COPY package*.json .
 # RUN npm install
 # COPY package-lock.json .
 # COPY yarn.lock .
