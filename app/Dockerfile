@@ -5,11 +5,11 @@ FROM node:12-alpine
 RUN apk update && apk upgrade
 RUN apk add --no-cache python3 g++ make
 
-# we are going to work in /app in the docker image
+# we are going to work in /app folder
 WORKDIR /app
 
 #copy the package.json's and install the dependencies
-#COPY package*.json ./
+COPY package*.json .
 RUN yarn install --production
 RUN yarn global add nodemon
 
