@@ -9,8 +9,10 @@ RUN apk add --no-cache python3 g++ make
 WORKDIR /app
 
 #copy the package.json's and install the dependencies
-RUN ls -l
-COPY ./package*.json .
+# RUN ls -l
+COPY package.json .
+# COPY package-lock.json .
+# COPY yarn.lock .
 RUN yarn install --production
 RUN yarn global add nodemon
 
