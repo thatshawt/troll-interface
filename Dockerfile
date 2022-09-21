@@ -6,13 +6,13 @@ RUN apk update && apk upgrade
 RUN apk add --no-cache python3 g++ make
 
 # we are going to work in /app folder
-WORKDIR /app
+# WORKDIR /app
 
 #copy the package.json's and install the dependencies
 # RUN ls -l
 # idk anymore
-COPY . . 
-# COPY package*.json .
+# COPY app app
+COPY app/package*.json .
 # RUN npm install
 # COPY package-lock.json .
 # COPY yarn.lock .
@@ -20,7 +20,7 @@ RUN yarn install --production
 RUN yarn global add nodemon
 
 #copy source code over
-COPY . .
+COPY app .
 
 #run the app
 # CMD echo BRUB RUBRUBRUIBRIURIU
