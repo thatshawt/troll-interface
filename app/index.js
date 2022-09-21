@@ -185,7 +185,7 @@ http.listen(80);
 
 var httpsServer = https.createServer(credentials, app).listen(443);
 
-console.log("v1.0.1")
+console.log("v1.0.2")
 console.log("Your app is listening on port " + httpsServer.address().port)
 let DB_USERNAME = process.env.DB_USERNAME;
 let DB_PASSWORD = process.env.DB_PASSWORD;
