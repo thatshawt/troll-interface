@@ -16,14 +16,13 @@ COPY app/package*.json ./app/
 # RUN npm install
 # COPY package-lock.json .
 # COPY yarn.lock .
-RUN cd /app
 RUN yarn install --production
 RUN yarn global add nodemon
-RUN cd ..
 #copy source code over
 COPY app ./app/
 
 #run the app
 # CMD echo BRUB RUBRUBRUIBRIURIU
 # CMD ls -l
-CMD cd /app && yarn run start
+CMD yarn --cwd /app/ run start
+# CMD yarn run start
