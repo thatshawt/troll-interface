@@ -72,8 +72,8 @@ app.use((req,res,next) => {
 
 app.use(csp({
   directives: {
-    defaultSrc: [`'self'`, "googletagmanager.com", 'fonts.googleapis.com'],
-    scriptSrc: [`'self'`, "googletagmanager.com",(req, res) => `'nonce-${ res.locals.nonce }'`],
+    defaultSrc: [`'self'`,'fonts.googleapis.com'],
+    scriptSrc: [`'self'`, "*.googletagmanager.com",(req, res) => `'nonce-${ res.locals.nonce }'`],
     fontSrc:["'self'",'fonts.gstatic.com', "fonts.cdnfonts.com", "cdnjs.cloudflare.com"],
     styleSrc: ["'self'", "fonts.cdnfonts.com", "cdnjs.cloudflare.com"]
   }
