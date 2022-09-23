@@ -73,7 +73,8 @@ app.use((req,res,next) => {
 app.use(csp({
   directives: {
     defaultSrc: [`'self'`,'fonts.googleapis.com'],
-    scriptSrc: [`'self'`, (req, res) => `'nonce-${ res.locals.nonce }'`],
+    scriptSrc: [`'self'`, 'googletagmanager.com', 
+                  (req, res) => `'nonce-${ res.locals.nonce }'`],
     fontSrc:["'self'",'fonts.gstatic.com', "fonts.cdnfonts.com", "cdnjs.cloudflare.com"],
     styleSrc: ["'self'", "fonts.cdnfonts.com", "cdnjs.cloudflare.com"]
   }
@@ -81,6 +82,7 @@ app.use(csp({
 
 //this is gonna be for the landing page and stuff
 app.use(express.static("public/interface"));
+app.use(express.static("public/resume"));//yeaaa
 
 var trollSchema = mongoose.Schema({
   _id: String,
